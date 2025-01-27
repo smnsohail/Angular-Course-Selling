@@ -1,0 +1,35 @@
+<!-- <div class="welcome-title">
+    <p>home works!</p>
+<h1>{{title}}</h1>
+<button class="title" (click)="changeTitle()">Change Title</button>
+</div> -->
+<section class="wide-hero-banner">
+  <img
+    src="images/banner-angular.jpg"
+    class="img-fluid"
+    alt="Responsive image"
+  />
+  <section class="banner-title">
+    <h1 class="">Learning that gets you</h1>
+    <p class=" ">Enhance your skills. Get started with us.</p>
+    <button type="button" class="btn btn-secondary btn-sm banner-button">
+      Courses
+    </button>
+    <button type="button" class="btn btn-primary btn-sm banner-button">
+      Explore
+    </button>
+  </section>
+</section>
+<!-- Courses -->
+<section class="courses m-5">
+  
+  @for(course of courses; track $index){
+    <div><h3>All Courses</h3></div>
+    <app-courses [course]="course"></app-courses>
+  }@empty {
+    <div class="course-empty" align="center">
+      <h4>No courses available</h4>
+    </div>
+  }
+  <!-- <app-courses></app-courses> -->
+</section>

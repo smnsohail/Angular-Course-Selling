@@ -1,0 +1,8 @@
+.navbar-collapse {
+  li {
+    margin-right: 1rem;
+  }
+}
+body {
+  background-color: #ededed;
+}

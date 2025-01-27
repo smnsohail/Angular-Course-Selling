@@ -1,0 +1,85 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 2rem 1rem;
+}
+.card{
+    width: auto;
+    margin-bottom: 4em;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+.card-body{
+    label{
+        font-size: 0.875rem;
+    }
+}
+.card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 0.6rem 0.4rem 0.6rem;
+    h6{
+        font-weight: bolder;
+    }
+}
+.btn-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        width: 7em;
+        font-weight: 790;
+        margin: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+    }
+    
+}
+
+#reset{
+    width: auto;
+    height: auto;
+    font-size: smaller;
+    font-size: 0.5rem;
+    padding: 0.2rem;
+}
+
+.warningDiv{
+    font-size: 0.7rem;
+}
+
+.courseBanner{
+    input{
+        height: 1.9rem;
+        font-size: 0.8rem;
+    }
+}
+.course-div{
+    margin: 1rem;
+    /* display: flex; */
+    
+
+}
+.course-heading h3{
+    font-size: 2em;
+    font-weight: bolder;
+}
+.course-box{
+    margin: 2em;
+}
+
+.course-body{
+    max-width:100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,23 @@
+.box{
+    display: flex;
+}
+.course{
+    width: 15em;
+}
+
+.course-body{
+    max-height: 12em;
+    .course-title{
+        font-size: 1.5em;
+    }
+    .course-text{
+        font-size: 1em;
+    }
+    .btn{
+        font-size: 0.6em;
+    }
+}
+
+.card-img-top{
+    height: 10em;
+}

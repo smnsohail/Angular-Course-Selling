@@ -1,0 +1,50 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+.welcome-title{
+    margin: 1rem;
+}
+button.title{
+    background-color: burlywood;
+    padding: 0.5rem;
+} */
+.wide-hero-banner{
+    width: auto;
+    img{
+        width: 100%;
+    }
+} 
+.banner-title{
+    transform: translate(0.5em, -10em);
+    line-height: 5px;;
+    width: auto;
+    height: auto;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5em;
+    h1{
+        font-size: 2em;
+       
+    }
+    p{
+        font-size: 1em;
+    }
+ }
+
+ .banner-button{
+    max-width: 5em ;
+    margin: 0.5em;
+ }
+
+
+/* courses */
+
+.courses{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
