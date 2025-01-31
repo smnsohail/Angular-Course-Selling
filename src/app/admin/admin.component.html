@@ -1,6 +1,6 @@
-<body>
+<div class="bodyAdmin" align="center">
   <div class="card">
-    <div class="card-header">
+    <div class="card-header bg-primary">
       <h6>Add Course</h6>
     </div>
     <div class="card-body">
@@ -99,7 +99,7 @@
           style="white-space: pre"
           (click)="resetFile()"
         >
-          <i class="fas fa-undo"></i> Reset file
+          <i class="fas fa-undo"></i> Reset
         </button>
 
         <div class="btn-div">
@@ -111,15 +111,14 @@
 
   <div class="row mt-3 course-div">
     @if(courses){
-    <div class="course-heading text-center">
-      <h3>All Courses</h3>
-    </div>
-    } 
-
+      <div class="course-heading text-center">
+        <h3>All Courses</h3>
+      </div>
+      } 
     <div class="course-body">
       @for(course of courses; track $index){
         <div class="col-lg-3 course-box">
-          <app-courses [course]="course"></app-courses>
+          <app-courses [course]="course" isAdmin="true" (del)="deleteCourse($event)"></app-courses>
         </div>
     
         }@empty {
@@ -131,4 +130,4 @@
         <!-- <app-courses *ngFor="let course of courses"></app-courses> -->
     </div>
   </div>
-</body>
+</div>

@@ -25,7 +25,7 @@ export class AdminComponent {
 
   getCourses() {
     const data = localStorage.getItem(StringsEnum.STORAGE_KEY);
-    console.log(data);
+    // console.log(data);
     if (data) {
       this.courses = JSON.parse(data);
     }
@@ -34,7 +34,7 @@ export class AdminComponent {
   //onSubmit function triggers when submit is clicked
   onSubmit(form: NgForm) {
     if (form.invalid || !this.cover) {
-      console.log('Invalid form');
+      // console.log('Invalid form');
       form.control.markAllAsTouched(); //to make all fields red when submit button is clicked
 
       //below line is used to show error message if image is not selected
@@ -91,6 +91,19 @@ export class AdminComponent {
     this.courses = [...this.courses, data];
     // console.log(this.courses);
 
+    //localStorage.setItem(StringsEnum.STORAGE_KEY, JSON.stringify(this.courses)); // commented this because we defined setItem() function so there we have used this. Now we can rewrite this as below..
+
+    this.setItem(this.courses);
+
+  }
+
+  setItem(data:any){
     localStorage.setItem(StringsEnum.STORAGE_KEY, JSON.stringify(this.courses));
+  }
+  deleteCourse(course:any){
+    this.courses = this.courses.filter(item =>item.id != course.id);
+    console.log(this.courses);
+    
+    this.setItem(this.courses);
   }
 }

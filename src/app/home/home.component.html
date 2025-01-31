@@ -3,6 +3,7 @@
 <h1>{{title}}</h1>
 <button class="title" (click)="changeTitle()">Change Title</button>
 </div> -->
+
 <section class="wide-hero-banner">
   <img
     src="images/banner-angular.jpg"
@@ -21,15 +22,50 @@
   </section>
 </section>
 <!-- Courses -->
-<section class="courses m-5">
-  
-  @for(course of courses; track $index){
-    <div><h3>All Courses</h3></div>
+
+<section class="courses col-md-4" align="center">
+  @if (courses.length>0) {
+  <div><h3>All Courses</h3></div>
+  }
+  <div class="course-div-home">
+    @for(course of courses; track $index){
     <app-courses [course]="course"></app-courses>
-  }@empty {
+    } @empty {
     <div class="course-empty" align="center">
       <h4>No courses available</h4>
     </div>
-  }
-  <!-- <app-courses></app-courses> -->
+    }
+    <!-- <app-courses></app-courses> -->
+  </div>
 </section>
+
+
+<!-- Hero Banner -->
+<!-- <section class="wide-hero-banner">
+  <img src="images/banner-angular.jpg" class="img-fluid" alt="Responsive image" />
+  <section class="banner-title">
+    <h1>Learning that gets you</h1>
+    <p>Enhance your skills. Get started with us.</p>
+    <button type="button" class="btn btn-secondary btn-sm banner-button">Courses</button>
+    <button type="button" class="btn btn-primary btn-sm banner-button">Explore</button>
+  </section>
+</section> -->
+
+<!-- Courses Section -->
+<!-- <section class="courses" align="center">
+  <ng-container *ngIf="courses.length > 0; else noCourses">
+    <div><h3>All Courses</h3></div>
+    <div class="course-div-home">
+      <ng-container *ngFor="let course of courses; let i = index">
+        <app-courses [course]="course"></app-courses>
+      </ng-container>
+    </div>
+  </ng-container> -->
+
+  <!-- Empty Courses Message -->
+  <!-- <ng-template #noCourses>
+    <div class="course-empty">
+      <h4>No courses available</h4>
+    </div>
+  </ng-template>
+</section> -->

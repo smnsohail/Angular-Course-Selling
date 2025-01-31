@@ -25,7 +25,7 @@ export const routes: Routes = [
         loadComponent:()=> import('./admin/admin.component').then((c) => c.AdminComponent),
     },
     {
-        path:'about', loadComponent:() => import('./about/about.component').then((c)=> c.AboutComponent),
+        path:'about' , loadComponent: ()=> import('./about/about.component').then(c=> c.AboutComponent)
     },
     {
         path:'courses', loadComponent:()=> import('./courses/courses.component').then(c=>c.CoursesComponent)
