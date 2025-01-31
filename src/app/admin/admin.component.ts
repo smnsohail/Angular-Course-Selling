@@ -50,6 +50,7 @@ export class AdminComponent {
 
     //this is written after defining the saveCourse() function
     this.saveCourse(form.value);
+    this.clearForm(form);
   }
 
   onFileSelected(event: any) {
@@ -79,6 +80,11 @@ export class AdminComponent {
     this.showError = false; // Reset error state
   }
 
+  clearForm(form:NgForm){
+    form.resetForm();
+    this.resetFile();
+  }
+
   //to save couse using local storage
   saveCourse(formValue: any) {
     // console.log(formValue);
@@ -94,7 +100,6 @@ export class AdminComponent {
     //localStorage.setItem(StringsEnum.STORAGE_KEY, JSON.stringify(this.courses)); // commented this because we defined setItem() function so there we have used this. Now we can rewrite this as below..
 
     this.setItem(this.courses);
-
   }
 
   setItem(data:any){
