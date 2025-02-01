@@ -2,14 +2,20 @@ import { Component, inject, NgModule } from '@angular/core';
 import { CoursesComponent } from '../courses/courses.component';
 import { StringsEnum } from '../enum/strings.enum';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CoursesComponent, CommonModule,],
+  imports: [CoursesComponent, CommonModule,RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  // constructor(private router: Router) {}
+
+  // navigateToCourses() {
+  //   this.router.navigate(['/courses']);
+  // }
   title = 'Sohail M Nadaf';
 
   courses: any[] = [];
@@ -22,7 +28,7 @@ export class HomeComponent {
   }
 
   // GET COURSES FOR HOME COMPONENT
-  ngOnInit(){
+  ngOnInit() {
     this.getCourses();
   }
   getCourses() {

@@ -3,3 +3,23 @@
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.about-us {
+  padding-bottom: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  object-fit: cover;
+  background: #cec6c1;
+}
+
+h2 {
+  font-weight: bolder;
+  margin: 1em;
+}
+h4 {
+  font-weight: bolder;
+  margin-top: 10px;
+}

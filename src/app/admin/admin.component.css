@@ -98,6 +98,8 @@
 
 .courses h3 {
   margin: 2em 1em 1em;
+  text-decoration: underline;
+  text-shadow: 3px 2px 5px;
   font-weight: bold;
 }
 /* styling have been moved to  COURSES.COMPONENT.CSS  To reduce redendency*/

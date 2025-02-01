@@ -76,14 +76,14 @@
     margin: 2em 1em 1em;
     font-weight: bold;
   } */
-
+ 
 .course-div-home {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
   width: auto;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .course-empty {
