@@ -98,8 +98,8 @@
           id="reset"
           style="white-space: pre"
           (click)="resetFile()"
-        >
-          <i class="fas fa-undo"></i> Reset Uploads
+        ><i class="bi bi-arrow-repeat"></i>
+        Reset Uploads
         </button>
 
         <div class="btn-div">
@@ -146,7 +146,7 @@
       }
     </div> -->
 
-    <app-courses [courses]="courses"></app-courses>
+    <app-courses [courses]="courses" isAdmin="true" (del)="deleteCourse($event)"></app-courses>
 
   </section>
 </div>

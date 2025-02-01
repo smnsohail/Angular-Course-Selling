@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 /* .box {
   display: flex;
   flex-wrap: wrap;
@@ -5,54 +10,62 @@
   gap: 1em;
 } */
 
-  .course {
-    width: 15em;
-    height: 20em;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  
-  .course:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-img-top {
-    width: 100%;
-    max-height: 10em;
-    object-fit: cover;
-  }
-  
-  .course-body {
-    padding: 1em;
-    text-align: center;
-  }
-  
-  .course-title {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-  
-  .course-text {
-    font-size: 1em;
-    line-height: 1em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  .btn {
-    font-size: 0.8em;
-    margin-top: 0.5em;
-  }
-  
-   /* Courses Section */
+.course {
+  width: 15em;
+  height: 20em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
 
-   /* styling have been TAKEN FROM  HOME.COMPONENT.CSS */
-   
-   /* .courses {
+.course:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  width: 100%;
+  max-height: 10em;
+  object-fit: cover;
+}
+
+.course-body {
+  flex-grow: 1;
+  padding: 1em;
+  text-align: center;
+  position: relative; 
+}
+
+.course-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.course-text {
+  font-size: 1em;
+  line-height: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn {
+  font-size: 0.8em;
+  padding: 0.5em;
+  position: absolute;
+  bottom: 10%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: auto; 
+  min-width: 80px;
+}
+
+/* Courses Section */
+
+/* styling have been TAKEN FROM  HOME.COMPONENT.CSS */
+
+/* .courses {
     width: auto;
     max-width: 80vw;
     text-align: center;
@@ -63,21 +76,21 @@
     margin: 2em 1em 1em;
     font-weight: bold;
   } */
-  
-  .course-div-home {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2em;
-    width: auto;
-  }
-  
-  .course-empty {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    font-size: 1.5em;
-    color: gray;
-  }
-  
+ 
+.course-div-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  width: auto;
+  margin-top: 2rem;
+}
+
+.course-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 1.5em;
+  color: gray;
+}
