@@ -1,99 +1,103 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 :host {
-    background-color: #ededed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Ensures the whole page gets the color */
-    width: 100%;
+  background-color: #ededed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures the whole page gets the color */
+  width: 100%;
 }
 
 .bodyAdmin {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    margin: 2rem 1rem;
-    max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: 2rem 1rem;
+  max-width: 1500px;
 }
 
 .card {
-    width: auto;
-    margin-bottom: 1em;
-    margin-top: 2rem;
-    font-weight: 600;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 1rem;
-    background: white;
+  width: auto;
+  margin-bottom: 1em;
+  margin-top: 2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  background: white;
 }
 
 .card-body label {
-    font-size: 0.875rem;
+  font-size: 0.875rem;
 }
 
 .card-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.8rem 0.6rem 0.4rem 0.6rem;
-    background-color: #007bff;
-    color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 0.6rem 0.4rem 0.6rem;
+  background-color: #007bff;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card-header h6 {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 .btn-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .btn-div button {
-    width: auto;
-    font-weight: 700;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+  width: auto;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 #reset {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 5px;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
 }
 
 .warningDiv {
-    font-size: 0.7rem;
-    color: red;
+  font-size: 0.7rem;
+  color: red;
 }
 
 .courseBanner input {
-    height: 2rem;
-    font-size: 0.875rem;
-    padding: 0.2rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+  height: 2rem;
+  font-size: 0.875rem;
+  padding: 0.2rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 /* Course Section Styling */
- /* Courses Section */
- .courses {
-    width: auto;
-    max-width: 80vw;
-    /* margin: auto; */
-    text-align: center;
-    margin-bottom: 2em;
-  }
-  
-  .courses h3 {
-    margin: 2em 1em 1em;
-    font-weight: bold;
-  }
+/* Courses Section */
+.courses {
+  width: auto;
+  max-width: 80vw;
+  /* margin: auto; */
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.courses h3 {
+  margin: 2em 1em 1em;
+  font-weight: bold;
+}
 /* styling have been moved to  COURSES.COMPONENT.CSS  To reduce redendency*/

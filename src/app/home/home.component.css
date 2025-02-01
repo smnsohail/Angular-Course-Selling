@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   :host{
     display: flex;
@@ -24,7 +24,8 @@
   }
   
   .banner-title {
-    height: fit-content;
+    height:fit-content;
+    width: 60vw;
     position: absolute;
     top: 60%;
     left: 5%;
@@ -33,19 +34,20 @@
   }
   
   .banner-title h1 {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
   }
   
   .banner-title p {
-    font-size: 1.2em;
-    margin-bottom: 0.3em;
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
   }
   
   .banner-button {
     max-width: 8em;
     padding: 0.3em;
     margin: 0.5em;
+    font-size: 1.5em;
   }
   
   /* Courses Section */
@@ -62,4 +64,60 @@
     font-weight: bold;
   }
 /* styling have been moved to  COURSES.COMPONENT.CSS  To reduce redendency*/
+@media (min-width: 560px) and (max-width: 1024px) {
+  .banner-title {
+    height: fit-content;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
   
+  .banner-title h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+  
+  .banner-title p {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .banner-button {
+    max-width: 8em;
+    padding: 0.3em;
+    margin: 0.5em;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 560px){
+  .banner-title {
+    height: fit-content;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+  
+  .banner-title h1 {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  .banner-title p {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .banner-button {
+    max-width: 8em;
+    padding: 0.3em;
+    margin: 0.5em;
+    font-size: 0.5rem;
+  }
+}
