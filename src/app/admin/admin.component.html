@@ -14,7 +14,7 @@
             class="form-control"
             id="title"
             name="title"
-            placeholder="Enter a Title"
+            placeholder="Enter a Title."
             #title="ngModel"
             [(ngModel)]="model.title"
             required
@@ -47,7 +47,7 @@
           <label for="description">Description</label>
           <textarea
             class="form-control"
-            placeholder="Add description, minimum length is 6"
+            placeholder="Add description, minimum 6 characters."
             id="description"
             name="description"
             #description="ngModel"
@@ -109,7 +109,7 @@
     </div>
   </div>
 
-  <div class="row mt-3 course-div">
+  <!-- <div class="row mt-3 course-div">
     @if(courses){
       <div class="course-heading text-center">
         <h3>All Courses</h3>
@@ -125,9 +125,28 @@
         <div class="course-empty" align="center">
           <h4>No courses available</h4>
         </div>
-        }
+        } -->
         <!-- or u can use ngIf directive -->
         <!-- <app-courses *ngFor="let course of courses"></app-courses> -->
-    </div>
-  </div>
+    <!-- </div>
+  </div> -->
+
+
+  <section class="courses col-md-4" align="center">
+    @if (courses.length>0) {
+    <div><h3>All Courses</h3></div>
+    }
+    <!-- <div class="course-div-home">
+      @for(course of courses; track $index){
+        <app-courses [course]="course" isAdmin="true" (del)="deleteCourse($event)"></app-courses>
+      } @empty {
+      <div class="course-empty" align="center">
+        <h4>No courses available</h4>
+      </div>
+      }
+    </div> -->
+
+    <app-courses [courses]="courses"></app-courses>
+
+  </section>
 </div>
