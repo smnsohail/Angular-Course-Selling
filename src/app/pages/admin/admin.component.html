@@ -98,8 +98,9 @@
           id="reset"
           style="white-space: pre"
           (click)="resetFile()"
-        ><i class="bi bi-arrow-repeat"></i>
-        Reset Uploads
+        >
+          <i class="bi bi-arrow-repeat"></i>
+          Reset Uploads
         </button>
 
         <div class="btn-div">
@@ -126,11 +127,10 @@
           <h4>No courses available</h4>
         </div>
         } -->
-        <!-- or u can use ngIf directive -->
-        <!-- <app-courses *ngFor="let course of courses"></app-courses> -->
-    <!-- </div>
+  <!-- or u can use ngIf directive -->
+  <!-- <app-courses *ngFor="let course of courses"></app-courses> -->
+  <!-- </div>
   </div> -->
-
 
   <section class="courses col-md-4" align="center">
     @if (courses.length>0) {
@@ -146,7 +146,14 @@
       }
     </div> -->
 
-    <app-courses [courses]="courses" isAdmin="true" (del)="deleteCourse($event)"></app-courses>
+    <!-- <app-courses
+      [courses]="courses"
+      isAdmin="true"
+      (del)="deleteCourse($event)"
+    ></app-courses> -->
 
+    <!-- Above is commented Because we are calling ngOnInit in course component thats why -->
+
+    <app-courses isAdmin="true" (del)="deleteCourse($event)"></app-courses>
   </section>
 </div>

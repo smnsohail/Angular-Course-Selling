@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { StringsEnum } from '../enum/strings.enum';
-import { AdminComponent } from '../admin/admin.component';
+import { StringsEnum } from '../../enum/strings.enum';
 
 @Component({
   selector: 'app-courses',
@@ -18,7 +17,8 @@ export class CoursesComponent {
   // To reduce redendecny in code we will call all the courses at once in courses.component
   // */
 
-  @Input() courses: any; //changed from @Input() course:any; to @Input() courses:any;
+  // @Input() courses: any; //changed from @Input() course:any; to @Input() courses:any;
+  courses:any[]=[];
   @Input() isAdmin: any = false;
   @Output() del = new EventEmitter();
 

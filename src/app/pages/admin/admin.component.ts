@@ -1,13 +1,12 @@
-import { CommonModule, NgIf } from '@angular/common';
-import { NONE_TYPE } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { StringsEnum } from '../../enum/strings.enum';
 import { CoursesComponent } from '../courses/courses.component';
-import { StringsEnum } from '../enum/strings.enum';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-admin',
-  imports: [CommonModule, FormsModule, CoursesComponent],
+  imports: [CoursesComponent, FormsModule, CommonModule],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css',
 })
@@ -17,19 +16,19 @@ export class AdminComponent {
   cover!: string; //The ! symbol in TypeScript is called the definite assignment assertion. It tells the TypeScript compiler that the variable will definitely be assigned a value at runtime, even if it is not initialized at the time of declaration.
   cover_file: any;
   showError: boolean = false;
-  courses: any[] = [];
+  // courses: any[] = [];
 
-  ngOnInit() {
-    this.getCourses();
-  }
+  // ngOnInit() {
+  //   // this.getCourses();
+  // }
 
-  getCourses() {
-    const data = localStorage.getItem(StringsEnum.STORAGE_KEY);
-    // console.log(data);
-    if (data) {
-      this.courses = JSON.parse(data);
-    }
-  }
+  // getCourses() {
+  //   const data = localStorage.getItem(StringsEnum.STORAGE_KEY);
+  //   // console.log(data);
+  //   if (data) {
+  //     this.courses = JSON.parse(data);
+  //   }
+  // }
 
   //onSubmit function triggers when submit is clicked
   onSubmit(form: NgForm) {
@@ -80,7 +79,7 @@ export class AdminComponent {
     this.showError = false; // Reset error state
   }
 
-  clearForm(form:NgForm){
+  clearForm(form: NgForm) {
     form.resetForm();
     this.resetFile();
   }
@@ -89,26 +88,33 @@ export class AdminComponent {
   saveCourse(formValue: any) {
     // console.log(formValue);
 
+    /* ===================      After services     ===================================
     const data = {
       ...formValue,
       image: this.cover,
       id: this.courses.length + 1,
     };
-    this.courses = [...this.courses, data];
+    this.courses = [...this.courses, data]; 
+    
     // console.log(this.courses);
 
     //localStorage.setItem(StringsEnum.STORAGE_KEY, JSON.stringify(this.courses)); // commented this because we defined setItem() function so there we have used this. Now we can rewrite this as below..
 
     this.setItem(this.courses);
+    =================================================*/
   }
 
-  setItem(data:any){
-    localStorage.setItem(StringsEnum.STORAGE_KEY, JSON.stringify(this.courses));
+  setItem(data: any) {
+    localStorage.setItem(StringsEnum.STORAGE_KEY, JSON.stringify(data));   // changed this.courses to data in stringify
   }
-  deleteCourse(course:any){
-    this.courses = this.courses.filter(item =>item.id != course.id);
+  /* ===================       After  services    ===================================
+  deleteCourse(course: any) {
+    this.courses = this.courses.filter((item) => item.id != course.id);
     // console.log(this.courses);
-    
+
     this.setItem(this.courses);
+    
   }
+
+  ======================================================================*/
 }

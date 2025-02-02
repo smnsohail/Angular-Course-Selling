@@ -21,7 +21,6 @@
   margin: 2rem 1rem;
   max-width: 1500px;
 }
-
 .card {
   width: auto;
   margin-bottom: 1em;
@@ -31,6 +30,7 @@
   border-radius: 10px;
   padding: 1rem;
   background: white;
+  
 }
 
 .card-body label {
@@ -89,8 +89,8 @@
 /* Course Section Styling */
 /* Courses Section */
 .courses {
-  width: auto;
-  max-width: 80vw;
+  width: 95vw;
+  max-width: 1500px;
   /* margin: auto; */
   text-align: center;
   margin-bottom: 2em;

@@ -1,8 +1,9 @@
 import { Component, inject, NgModule } from '@angular/core';
-import { CoursesComponent } from '../courses/courses.component';
-import { StringsEnum } from '../enum/strings.enum';
+import { CoursesComponent } from "../courses/courses.component";
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { StringsEnum } from '../../enum/strings.enum';
+
 
 @Component({
   selector: 'app-home',
@@ -29,12 +30,12 @@ export class HomeComponent {
 
   // GET COURSES FOR HOME COMPONENT
   ngOnInit() {
-    this.getCourses();
+    // this.getCourses();
   }
-  getCourses() {
-    const data = localStorage.getItem(StringsEnum.STORAGE_KEY);
-    if (data) {
-      this.courses = JSON.parse(data);
-    }
-  }
+  // getCourses() {
+  //   const data = localStorage.getItem(StringsEnum.STORAGE_KEY);
+  //   if (data) {
+  //     this.courses = JSON.parse(data);
+  //   }
+  // }
 }

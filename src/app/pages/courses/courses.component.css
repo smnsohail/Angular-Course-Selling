@@ -3,16 +3,10 @@
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* .box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1em;
-} */
-
 .course {
   width: 15em;
   height: 20em;
+  margin: 1.5em 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -80,7 +74,7 @@
 .course-div-home {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 2em;
   width: auto;
   margin-top: 2rem;
