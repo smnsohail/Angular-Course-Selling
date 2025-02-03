@@ -60,9 +60,10 @@
 <!-- Courses -->
 
 <section class="courses col-md-5" align="center">
+  <!-- /* ===================    service   ===================================
   @if (courses.length>0) {
   <div><h3>All Courses</h3></div>
-  }
+  } -->
   <!-- <div class="course-div-home">
     @for(course of courses; track $index){
     <app-courses [course]="course"></app-courses>
@@ -74,7 +75,9 @@
     <!-- <app-courses></app-courses> -->
   <!-- </div> -->
 
-  <app-courses [courses]="courses"></app-courses>
+
+  <!-- <app-courses [courses]="courses"></app-courses> -->   <!-- Because we are calling ngOnInit in course component thats why -->
+   <app-courses/>
   
 </section>
 

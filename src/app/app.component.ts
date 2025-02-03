@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
-import { FooterComponent } from "./footer/footer.component";
+import { HeaderComponent } from './main/header/header.component';
+import { FooterComponent } from './main/footer/footer.component';
+
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent {
   // ngOnInit(){
   //   this.changeTitle();
   // }
-  changeTitle(){
-    this.title = 'Sohail M Nadaf - Angular Developer';
-  }
+  // changeTitle(){
+  //   this.title = 'Sohail M Nadaf - Angular Developer';
+  // }
 }

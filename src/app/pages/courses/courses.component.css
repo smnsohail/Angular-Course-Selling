@@ -3,16 +3,10 @@
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* .box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1em;
-} */
-
 .course {
   width: 15em;
   height: 20em;
+  margin: 1.5em 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -42,14 +36,25 @@
   font-weight: bold;
 }
 
-.course-text {
+/* .course-text {
   font-size: 1em;
   line-height: 1em;
+  text-align: justify;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow:clip;
   white-space: nowrap;
+} */
+.course-text {
+  font-size: 1em;
+  line-height: 1.2em; 
+  text-align: center;
+  overflow: hidden;
+  display: -webkit-box; 
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical; 
+  max-height: 3.6em; 
+  /* Optional: Add a "Read More" link/button if needed */
 }
-
 .btn {
   font-size: 0.8em;
   padding: 0.5em;
@@ -80,7 +85,7 @@
 .course-div-home {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 2em;
   width: auto;
   margin-top: 2rem;
