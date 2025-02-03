@@ -2,7 +2,7 @@ import { Component, inject, NgModule } from '@angular/core';
 import { CoursesComponent } from "../courses/courses.component";
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { StringsEnum } from '../../enum/strings.enum';
+// import { StringsEnum } from '../../enum/strings.enum';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class HomeComponent {
   // }
   title = 'Sohail M Nadaf';
 
-  courses: any[] = [];
+  // courses: any[] = []; /* ===================    service   ===================================*/
 
   // ngOnInit(){
   //   this.changeTitle();
