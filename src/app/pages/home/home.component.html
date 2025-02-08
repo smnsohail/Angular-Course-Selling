@@ -1,3 +1,43 @@
+<!-- Hero Banner -->
+
+<section class="wide-hero-banner">
+  <img
+    src="images/courses/banner-angular.jpg"
+    class="img-fluid"
+    alt="Responsive image"
+  />
+  <section class="banner-title">
+    <h1 class="">Learning that gets you</h1>
+    <p class=" ">Enhance your skills. Get started with us.</p>
+    <button type="button" class="btn btn-secondary btn-sm banner-button" routerLink="/courses">
+      Courses
+    </button>
+    <button type="button" class="btn btn-primary btn-sm banner-button" routerLink="/courses">
+      Explore
+    </button>
+  </section>
+</section>
+
+
+<!-- Courses -->
+
+<section class="courses col-md-5" align="center">
+ 
+  @if (courses.length>0) {
+  <div><h3>All Courses</h3></div>
+  }
+ 
+
+  <!-- <app-courses [courses]="courses"></app-courses> -->   <!-- Because we are calling ngOnInit in course component thats why -->
+   <app-courses/>
+  
+</section>
+
+
+
+
+
+
 <!-- <div class="welcome-title">
     <p>home works!</p>
 <h1>{{title}}</h1>
@@ -34,41 +74,5 @@
   </ng-template>
 </section> -->
 
-
-
-<!-- Hero Banner -->
-
-<section class="wide-hero-banner">
-  <img
-    src="images/courses/banner-angular.jpg"
-    class="img-fluid"
-    alt="Responsive image"
-  />
-  <section class="banner-title">
-    <h1 class="">Learning that gets you</h1>
-    <p class=" ">Enhance your skills. Get started with us.</p>
-    <button type="button" class="btn btn-secondary btn-sm banner-button" routerLink="/courses">
-      Courses
-    </button>
-    <button type="button" class="btn btn-primary btn-sm banner-button" routerLink="/courses">
-      Explore
-    </button>
-  </section>
-</section>
-
-
-<!-- Courses -->
-
-<section class="courses col-md-5" align="center">
- 
-  @if (courses.length>0) {
-  <div><h3>All Courses</h3></div>
-  }
- 
-
-  <!-- <app-courses [courses]="courses"></app-courses> -->   <!-- Because we are calling ngOnInit in course component thats why -->
-   <app-courses/>
-  
-</section>
 
 
