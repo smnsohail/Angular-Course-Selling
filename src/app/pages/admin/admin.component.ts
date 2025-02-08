@@ -17,7 +17,7 @@ export class AdminComponent {
   cover!: string;
   cover_file: any;
   showError: boolean = false;
-  // courses: any[] = [];
+  courses= inject(CourseService).getCourses();
 
   private courseService = inject(CourseService);
 

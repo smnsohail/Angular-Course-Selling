@@ -1,6 +1,7 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { CourseService } from '../../services/course/course.service';
 import { Course } from '../../interface/course.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-courses',
@@ -9,6 +10,9 @@ import { Course } from '../../interface/course.interface';
   styleUrl: './courses.component.css',
 })
 export class CoursesComponent {
+
+  subscribeCourse!:Subscription;
+
 
   //  INJECTING THE courseService 
   // constructor( private courseService: CourseService ){}
@@ -19,9 +23,15 @@ export class CoursesComponent {
 
   ngOnInit(){
     this.courses = this.courseService.getCourses();
-    this.courseService.courses.subscribe({
-      next: (courses) => { this.courses = courses; },
-      error: (error) => { console.error('Error:', error); },
+    this.subscribeCourse = this.courseService.courses.subscribe({
+      next: (courses) => { 
+        this.courses = courses; 
+        // console.log("courses :"+ courses );
+        
+      },
+      error: (error) => { 
+        console.error('Error:', error); 
+      },
     })
   }
 
@@ -29,7 +39,13 @@ export class CoursesComponent {
     this.courseService.deleteCourse(course);
   }
     
-
+  ngOnDestroy(){
+    if(this.subscribeCourse){
+      // console.log('Destroyed');
+      
+      this.subscribeCourse.unsubscribe();
+    }
+  }
 
 }
 
