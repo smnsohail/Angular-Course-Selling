@@ -33,7 +33,7 @@ export class CourseService {
   }
 
   deleteCourse(data:Course){
-   let courses = this.course$.value; //let courses = this.course$.getValue();
+   let courses = this.course$.value;
    courses =  courses.filter(item => item.id != data.id);
    this.updateCourses(courses); //this.course$.next(courses);
    this.setItem(courses);

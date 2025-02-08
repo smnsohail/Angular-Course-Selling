@@ -22,11 +22,11 @@
   @for(course of courses; track $index){
   <!-- <div class="box"> -->
     <div class="card course">
-      <img class="card-img-top" [src]="course?.image" alt="Card image cap" />
+      <img class="card-img-top" [src]="course.image" alt="Card image cap" />
       <!-- src={{course.image}}  we can use this also above-->
       <div class="card-body course-body">
-        <h5 class="card-title course-title">{{ course?.title }}</h5>
-        <p class="card-text course-text">{{ course?.description }}</p>
+        <h5 class="card-title course-title">{{ course.title }}</h5>
+        <p class="card-text course-text">{{ course.description }}</p>
         <button class="btn btn-primary" [hidden]="isAdmin">Buy Now</button>
         @if (isAdmin) {
         <button class="btn btn-danger" (click)="deleteCourse(course)">
