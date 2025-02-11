@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output, signal } from '@angular/core';
 import { CourseService } from '../../services/course/course.service';
 import { Course } from '../../interface/course.interface';
 import { Subscription } from 'rxjs';
@@ -18,15 +18,22 @@ export class CoursesComponent {
   // constructor( private courseService: CourseService ){}
   private courseService = inject(CourseService);
 
-  courses:Course[]=[];
+  // courses:Course[]=[];
+  // Using signals
+  courses = signal<Course[]>([]);
+
   @Input() isAdmin:boolean = false;
 
   ngOnInit(){
-    this.courses = this.courseService.getCourses();
+    // this.courses = this.courseService.getCourses();
+    this.courses.set(this.courseService.getCourses());
+   
     this.subscribeCourse = this.courseService.courses.subscribe({
       next: (courses) => { 
-        this.courses = courses; 
+        // this.courses = courses; 
+        this.courses.set(courses); 
         // console.log("courses :"+ courses );
+        // console.log("courses :"+ this.courses() );
         
       },
       error: (error) => { 

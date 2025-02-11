@@ -35,7 +35,8 @@
         <li class="nav-item mx-2">
           <a
             class="nav-link"
-            
+            [class.active]="activeMenu === 'about'"
+            (click)="setActiveMenu('about')"
             routerLink="/about"
             >About</a
           >
