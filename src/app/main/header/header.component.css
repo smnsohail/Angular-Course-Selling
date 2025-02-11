@@ -9,11 +9,11 @@ nav {
   padding: 0.3em 1em;
   box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
 }
-.navbar button{
+.navbar button {
   height: 2.5rem;
   margin-left: 0.5rem;
 }
-.navbar-brand img{
+.navbar-brand img {
   margin: 0.2em 0.2em;
   height: 2.5rem;
   /* width: 2rem; */
@@ -21,3 +21,22 @@ nav {
   border: 2px solid rgb(197, 83, 35);
 }
 
+.nav-item a {
+  border: 2px solid transparent;
+  padding: 5px 10px;
+  border-radius: 1em;
+  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-item a.active {
+  background-color: #007bff;
+  border-radius: 1em;
+  color: white;
+  
+}
+.nav-item a:hover {
+  /* background-color: rgba(0, 123, 255,0.1); */
+  border: 2px solid #007bff;
+  border-radius: 1em;
+  /* color: #007bff; */
+}
