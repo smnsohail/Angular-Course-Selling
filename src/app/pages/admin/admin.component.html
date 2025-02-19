@@ -16,9 +16,10 @@
             name="title"
             placeholder="Enter a Title."
             #title="ngModel"
-            [(ngModel)]="model.title"
+            [(ngModel)]="model().title"
             required
           />
+          <!-- after signal, [(ngModel)]="model.title" above changed to  [(ngModel)]="model().title"; -->
 
           <div
             *ngIf="title.invalid && title.touched"
@@ -51,11 +52,11 @@
             id="description"
             name="description"
             #description="ngModel"
-            [(ngModel)]="model.description"
+            [(ngModel)]="model().description"
             required
             minlength="6"
           ></textarea>
-
+<!-- after signal, [(ngModel)]="model.description" changed to [(ngModel)]="model().description" -->
           <div
             *ngIf="description.invalid && description.touched"
             class="text-danger warningDiv"
@@ -77,15 +78,18 @@
             cont
           />
 
-          @if(cover) {
+          <!-- after signal, @if(cover) changed to @if(cover())-->
+          @if(cover()) {
           <div class="col-md-6 file-cover" align="left">
             <img
-              [src]="cover"
+              [src]="cover()"
               alt="uploaded image"
               style="height: 2rem; border: 0.4px solid black"
             />
           </div>
-          } @if (showError && !cover) {
+          <!-- after signal, [src]="cover" changed to [src]="cover()" -->
+          <!-- after signal, @if (showError && !cover) { changed to  @if (showError() && !cover) { -->
+          } @if (showError() && !cover) {
           <div class="text-danger warningDiv">
             Please upload a valid image file.
           </div>

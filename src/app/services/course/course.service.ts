@@ -1,11 +1,64 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, signal, WritableSignal } from '@angular/core';
 import { StringsEnum } from '../../enum/strings.enum';
 import { Course } from '../../interface/course.interface';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, retry } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
+export class CourseService {
+  // ============ after using signals below is changed  ============ 
+
+  private courses : WritableSignal<Course[]> =  signal<Course[]>([]);
+
+  get coursesSignal(){
+    return this.courses.asReadonly();
+  }
+
+
+  constructor() { }
+
+  //From course component
+  getCourses():Course[] {
+    const data = localStorage.getItem(StringsEnum.STORAGE_KEY);
+    if (data) {
+      const courses = JSON.parse(data);
+      this.updateCourses(courses);
+      return courses;
+    }
+    return [];
+  }
+
+  deleteCourse(data:Course){
+   let courses = this.course$.value;
+   courses =  courses.filter(item => item.id != data.id);
+   this.updateCourses(courses); //this.course$.next(courses);
+   this.setItem(courses);
+  }
+
+  addCourse(data:Course){
+    const courses = this.course$.value;
+    const newCourses = [...courses, {...data, id : courses.length + 1}];
+
+    //this.course$.next(newCourses); //appending newly added courses to the courses$ BehaviorSubject
+    this.updateCourses(newCourses); // using a function instead of repeating code
+
+    this.setItem(newCourses);
+    return newCourses
+  }
+  
+  updateCourses(data:Course[]){
+    this.course$.next(data);
+  }
+
+  setItem(data: Course[]) {
+    localStorage.setItem(StringsEnum.STORAGE_KEY, JSON.stringify(data)); // changed this.courses to data in stringify
+  }
+
+}
+
+/* ============ using RxJS observable ============ 
 export class CourseService {
 
   // here we are not storing any value of Courses here, so to set an id for each course we will be using BehaviorSubject<>();
@@ -59,3 +112,4 @@ export class CourseService {
   }
 
 }
+  */
