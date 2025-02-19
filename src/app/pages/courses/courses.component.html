@@ -19,6 +19,7 @@
 
 <!-- TO RDUCE REDENDENCY IN LOOPING COURSES IN HOME AND ADMIN WE ARE LOADING ALL COURSES HERE ONLY -->
 <div class="course-div-home col-md-4 mb-5">
+  <!-- @for(course of courses; track $index){ -->
   <!-- Below "course of courses" is changed to "course of courses()" because we are using signals -->
   @for(course of courses(); track $index){
   <!-- <div class="box"> -->

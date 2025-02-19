@@ -19,13 +19,14 @@ export class CoursesComponent {
   private courseService = inject(CourseService);
 
   // courses:Course[]=[];
+
   // Using signals
   courses = signal<Course[]>([]);
 
   @Input() isAdmin:boolean = false;
 
   ngOnInit(){
-    // this.courses = this.courseService.getCourses();
+    // this.courses = this.courseService.getCourses(); //changed after using signals to below
     this.courses.set(this.courseService.getCourses());
    
     this.subscribeCourse = this.courseService.courses.subscribe({
