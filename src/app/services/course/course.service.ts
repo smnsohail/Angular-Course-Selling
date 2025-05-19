@@ -12,7 +12,7 @@ export class CourseService {
   //Here we will use characters in defining the name of the BehaviorSubject, we can use "_" or "-" or any other character but it should be unique."$" is preferrable here.
   //Using a special character like $ in the name of your BehaviorSubject (course$) is a common and good practice in many JavaScript/TypeScript projects, especially when working with RxJS (Reactive Extensions for JavaScript)
   
-  private course$ = new BehaviorSubject<Course[]>([]);
+  private course$ = new BehaviorSubject<Course[]>([] /*padding with  empty array or passing empty array*/);
 
   //getter is defined as follows, so that we can get the value of the BehaviorSubject in our component.
   get courses(){
