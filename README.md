@@ -72,4 +72,5 @@ For more information on using the Angular CLI, including detailed command refere
 ![alt text](<Screenshot 2025-07-10 144508.png>) 
 
 ### Admin Page
+##### Zoomed out Image
 ![alt text](<Screenshot 2025-07-10 144551.png>)
