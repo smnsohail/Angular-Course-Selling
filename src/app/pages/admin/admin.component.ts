@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { StringsEnum } from '../../enum/strings.enum';
 import { CoursesComponent } from '../courses/courses.component';
@@ -13,10 +13,17 @@ import { Course } from '../../interface/course.interface';
   styleUrl: './admin.component.css',
 })
 export class AdminComponent {
-  model: any = {}; //as we used ngModel in the inputs
-  cover!: string;
-  cover_file: any;
-  showError: boolean = false;
+  // model: any = {}; //as we used ngModel in the inputs
+  // cover!: string;
+  // cover_file: any;
+  // showError: boolean = false;
+
+  model = signal<any>({});
+  cover = signal<string | null>(null);
+  cover_file = signal<any>(null);
+  showError = signal<boolean>(false);
+
+
   courses= inject(CourseService).getCourses();
 
   private courseService = inject(CourseService);
@@ -24,7 +31,8 @@ export class AdminComponent {
   onSubmit(form: NgForm) {
     if (form.invalid || !this.cover) {
       form.control.markAllAsTouched();
-      this.showError = !this.cover;
+      // this.showError = !this.cover; // changed to signal
+      this.showError.set(!this.cover);
       return;
     }
 
@@ -34,12 +42,14 @@ export class AdminComponent {
   onFileSelected(event: any) {
     const file = event.target.files[0];
     if (file) {
-      this.cover_file = file;
+      // this.cover_file = file; //after signals
+      this.cover_file.set(file);
       const reader = new FileReader();
 
       reader.onload = () => {
         const dataUrl = reader.result!.toString();
-        this.cover = dataUrl;
+        // this.cover = dataUrl;
+        this.cover.set(dataUrl);
       };
 
       reader.readAsDataURL(file);
@@ -51,7 +61,8 @@ export class AdminComponent {
       const formValue = form.value;
       const data: Course = {
         ...formValue,
-        image: this.cover,
+        // image: this.cover, // after signals we will use image:this.cover()
+        image: this.cover(),
         // id: this.courses.length + 1,
       };
   
@@ -70,9 +81,13 @@ export class AdminComponent {
 
   /* Reseting file and form */
   resetFile() {
-    this.cover = '';
-    this.cover_file = null;
-    this.showError = false;
+    // this.cover = '';
+    // this.cover_file = null;
+    // this.showError = false;
+
+    this.cover.set(null);
+    this.cover_file.set(null);
+    this.showError.set(false);
   }
 
   clearForm(form: NgForm) {
